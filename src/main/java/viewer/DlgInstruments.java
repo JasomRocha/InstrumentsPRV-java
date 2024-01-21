@@ -29,7 +29,6 @@ public class DlgInstruments extends javax.swing.JDialog {
         super(parent, modal);
             initComponents();
             this.ic = ic;
-           
     }
       
      
@@ -101,7 +100,6 @@ public class DlgInstruments extends javax.swing.JDialog {
         tdfSearch = new javax.swing.JTextField();
         btnLocalizarInstrumento = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        btnEditar = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -177,13 +175,6 @@ public class DlgInstruments extends javax.swing.JDialog {
 
         jLabel1.setText("Localizar Intrumento: ");
 
-        btnEditar.setText("Editar");
-        btnEditar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEditarActionPerformed(evt);
-            }
-        });
-
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(204, 204, 204));
         jLabel8.setText("Created By JRSolutions®");
@@ -200,8 +191,6 @@ public class DlgInstruments extends javax.swing.JDialog {
                         .addGap(15, 15, 15)
                         .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnEditar)
-                        .addGap(18, 18, 18)
                         .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnOrdenar)
@@ -227,7 +216,6 @@ public class DlgInstruments extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSair)
-                    .addComponent(btnEditar)
                     .addComponent(jLabel8))
                 .addContainerGap())
         );
@@ -256,11 +244,6 @@ public class DlgInstruments extends javax.swing.JDialog {
        showResults(ic.Ordenate(ic.returnAll())); 
     }//GEN-LAST:event_btnOrdenarActionPerformed
 
-    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
-        
-      
-    }//GEN-LAST:event_btnEditarActionPerformed
-
     
     public static void main(String args[]) {
        
@@ -270,7 +253,7 @@ public class DlgInstruments extends javax.swing.JDialog {
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
+                        
                     }
                 });
                 dialog.setVisible(true);
@@ -279,7 +262,6 @@ public class DlgInstruments extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnLocalizarInstrumento;
     private javax.swing.JButton btnOrdenar;
     private javax.swing.JButton btnSair;

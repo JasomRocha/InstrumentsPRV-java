@@ -49,9 +49,15 @@ public class MainFrame extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        btnSalvarAlt = new javax.swing.JButton();
+        btnAterar = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cadastro de Instrumentos - PRV");
+        setBackground(new java.awt.Color(51, 255, 153));
         setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         setResizable(false);
 
@@ -62,9 +68,14 @@ public class MainFrame extends javax.swing.JFrame {
         });
 
         tdaDesc.setColumns(20);
-        tdaDesc.setForeground(new java.awt.Color(204, 204, 204));
         tdaDesc.setRows(5);
         jScrollPane1.setViewportView(tdaDesc);
+
+        tdfLastCal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tdfLastCalActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("Equipamento:");
 
@@ -76,9 +87,9 @@ public class MainFrame extends javax.swing.JFrame {
 
         jLabel3.setText("Próxima Calibração:");
 
-        jLabel7.setText("Descrição:");
+        jLabel7.setText("Descrição ou informação adicional:");
 
-        btnSalvar.setText("Salvar");
+        btnSalvar.setText("Inserir");
         btnSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSalvarActionPerformed(evt);
@@ -103,93 +114,144 @@ public class MainFrame extends javax.swing.JFrame {
         jLabel8.setForeground(new java.awt.Color(204, 204, 204));
         jLabel8.setText("Created By JRSolutions®");
 
+        jLabel9.setBackground(new java.awt.Color(51, 255, 204));
         jLabel9.setIcon(new javax.swing.ImageIcon("C:\\Users\\jasom\\OneDrive\\Documentos\\NetBeansProjects\\CadastroDeInstrumentosPRV\\img\\Logo-prv.png")); // NOI18N
         jLabel9.setToolTipText("");
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel1.setText("SEJA BEM VINDO!");
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
+        jLabel1.setText("Bem vindo, cadastre um novo equipamento");
+
+        btnSalvarAlt.setText("Salvar todas alterações");
+        btnSalvarAlt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalvarAltActionPerformed(evt);
+            }
+        });
+
+        btnAterar.setText("Editar Instrumento");
+        btnAterar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAterarActionPerformed(evt);
+            }
+        });
+
+        jLabel10.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel10.setText("(Alterações Permanentes)");
+
+        jLabel11.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel11.setText("Formato: \"dd/MM/yyyy\"");
+
+        jLabel12.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel12.setText("Formato: \"dd/MM/yyyy\"");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(166, 166, 166))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(38, 38, 38)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap()
+                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(48, 48, 48)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnVerTodos, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(jLabel10)
+                                        .addGap(15, 15, 15))
+                                    .addComponent(btnSalvarAlt, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(34, 34, 34)
+                                .addComponent(jLabel11)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel12)
+                                .addGap(67, 67, 67))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 243, Short.MAX_VALUE)
-                                        .addComponent(tdfName)
-                                        .addComponent(tdfMaker)
-                                        .addComponent(tdfModel)
-                                        .addComponent(tdfLastCal)
-                                        .addComponent(tdfNextCal))
+                                    .addComponent(btnAterar)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(btnVerTodos)
-                                        .addGap(10, 10, 10)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addComponent(btnSalvar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(btnSair, javax.swing.GroupLayout.DEFAULT_SIZE, 79, Short.MAX_VALUE)))))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(112, Short.MAX_VALUE))
+                                        .addComponent(jLabel2)
+                                        .addGap(253, 253, 253)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(tdfMaker, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel4)))
+                                    .addComponent(tdfName, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel6)
+                                        .addGap(230, 230, 230)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel3)
+                                            .addComponent(tdfNextCal, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(tdfLastCal, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel5)
+                                    .addComponent(tdfModel, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel7)
+                                    .addComponent(jLabel1))
+                                .addGap(0, 1, Short.MAX_VALUE)))))
+                .addContainerGap(45, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(189, 189, 189))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(12, 12, 12)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tdfName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tdfMaker, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
                     .addComponent(jLabel4))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(tdfName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tdfMaker, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tdfModel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tdfModel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
-                .addGap(18, 18, 18)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tdfLastCal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6))
+                    .addComponent(tdfNextCal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(jLabel12))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tdfNextCal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addGap(31, 31, 31)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7))
-                .addGap(13, 13, 13)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSalvar)
                     .addComponent(btnVerTodos)
-                    .addComponent(btnSalvar))
-                .addGap(18, 18, 18)
+                    .addComponent(btnSalvarAlt, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnAterar)
+                .addGap(1, 1, 1)
                 .addComponent(btnSair)
-                .addGap(20, 20, 20)
-                .addComponent(jLabel8))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel8)
+                .addGap(15, 15, 15))
         );
 
         pack();
@@ -204,34 +266,78 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSairActionPerformed
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
-      Instrument instrument = new Instrument(); //instaciamos o obej veiculo para populalo com as informacoes dos campos de texto
+      
+      Instrument instrument = new Instrument(); //instaciamos o obej instrument para populalo com as informacoes dos campos de texto
       DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
       
-      instrument.setName(tdfName.getText());
-      instrument.setMaker(tdfMaker.getText());
-      instrument.setModel(tdfModel.getText());
-      String last = tdfLastCal.getText();
-      LocalDate latCal = LocalDate.parse(last, fmt);
-      String next = tdfNextCal.getText();
-      LocalDate nextCal = LocalDate.parse(next, fmt);
-      instrument.setNextCalibration(nextCal);
-      instrument.setLastCalibration(latCal);
-      instrument.setDescription(tdaDesc.getText());
       
-      //tentar salvar
-      if(ic.save(instrument)){
-          JOptionPane.showMessageDialog(null, "Instrumento cadastrado com sucesso!");
-          tdfName.setText("");
-          tdfMaker.setText("");
-          tdfModel.setText("");
-          tdfLastCal.setText("");
-          tdfNextCal.setText("");
-          tdaDesc.setText("");
-          tdfName.requestFocus();
-        }
-      else{
-         JOptionPane.showMessageDialog(null, "Erro ao cadastrar Instrumento!"); 
+      if(tdfName.getText().isEmpty() || tdfMaker.getText().isEmpty() || tdfModel.getText().isEmpty() || tdfLastCal.getText().isEmpty() || tdfNextCal.getText().isEmpty()){
+          JOptionPane.showMessageDialog(null, "Todos os campos devem ser preenchidos"); 
       }
+      else if(tdfName.getText().isBlank() || tdfMaker.getText().isBlank() || tdfModel.getText().isBlank() || tdfLastCal.getText().isBlank() || tdfNextCal.getText().isBlank()){
+          JOptionPane.showMessageDialog(null, "Todos os campos devem ser preenchidos"); 
+      }
+      else{
+            instrument.setName(tdfName.getText());
+            instrument.setMaker(tdfMaker.getText());
+            instrument.setModel(tdfModel.getText());
+            String last = tdfLastCal.getText();
+            LocalDate latCal = LocalDate.parse(last, fmt);
+            String next = tdfNextCal.getText();
+            LocalDate nextCal = LocalDate.parse(next, fmt);
+            instrument.setNextCalibration(nextCal);
+            instrument.setLastCalibration(latCal);
+            instrument.setDescription(tdaDesc.getText());
+            
+            if(ic.hasAlreadySavedInstrumentName(instrument)){
+                JOptionPane.showMessageDialog(null, "Já existe um instrumento com esse nome. Mude o nome do Instrumento para salvar.\n(Sugetão: SeuEquipamento02)");
+            }
+            
+            else if(ic.hasAlreadySavedInstrument(instrument)){
+                 int opcao = JOptionPane.showConfirmDialog(null, "Já existe um Instrumento cadastrado com essas informações.\nDeseja realmente salvar este arquivo?", "Atenção! risco de instrumentos duplicados", JOptionPane.YES_NO_OPTION);
+                 if(opcao == JOptionPane.YES_OPTION){
+                        //tentar salvar
+                        if(ic.save(instrument)){
+                            JOptionPane.showMessageDialog(null, "Instrumento cadastrado com sucesso!");
+                            tdfName.setText("");
+                            tdfMaker.setText("");
+                            tdfModel.setText("");
+                            tdfLastCal.setText("");
+                            tdfNextCal.setText("");
+                            tdaDesc.setText("");
+                            tdfName.requestFocus();
+                          }
+                        else{
+                           JOptionPane.showMessageDialog(null, "Erro ao cadastrar Instrumento!"); 
+                        }
+                    } else if(opcao == JOptionPane.NO_OPTION){
+                         JOptionPane.showMessageDialog(null, "Instrumento não cadastrado!");
+                    } else if(opcao == JOptionPane.CANCEL_OPTION){
+                           
+                    } else if(opcao == JOptionPane.CLOSED_OPTION){
+                         
+                    }
+                }   
+                    else{
+                      if(ic.save(instrument)){
+                            JOptionPane.showMessageDialog(null, "Instrumento cadastrado com sucesso!");
+                            tdfName.setText("");
+                            tdfMaker.setText("");
+                            tdfModel.setText("");
+                            tdfLastCal.setText("");
+                            tdfNextCal.setText("");
+                            tdaDesc.setText("");
+                            tdfName.requestFocus();
+                          }
+                        else{
+                           JOptionPane.showMessageDialog(null, "Erro ao cadastrar Instrumento!"); 
+                        }
+                    }  
+            
+      }
+            
+      
+     
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void btnVerTodosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerTodosActionPerformed
@@ -265,6 +371,40 @@ public class MainFrame extends javax.swing.JFrame {
                        dlg.setLocationRelativeTo(null);
                     }    
     }//GEN-LAST:event_btnVerTodosActionPerformed
+
+    private void btnSalvarAltActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarAltActionPerformed
+        String path = "c:instrumentos.csv";
+        
+        int opcao = JOptionPane.showConfirmDialog(null, "Deseja salvar todas as alterações no arquivo?", "Confirme para Salvar", JOptionPane.YES_NO_OPTION);
+        
+        if(opcao == JOptionPane.YES_OPTION){
+           if(ic.salvarEmArquivo(path)){
+               JOptionPane.showMessageDialog(null, "Alterações salvas!");
+           } else{
+               JOptionPane.showMessageDialog(null, "Alterações não salvas! Problema com Arquivo.");
+           }
+           
+        } else if(opcao == JOptionPane.NO_OPTION){
+           
+        } else if(opcao == JOptionPane.CANCEL_OPTION){
+             
+        } else if(opcao == JOptionPane.CLOSED_OPTION){
+           
+        }
+        else{
+            
+        }          
+    }//GEN-LAST:event_btnSalvarAltActionPerformed
+
+    private void btnAterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAterarActionPerformed
+        ChangesFrame cf = new ChangesFrame(ic);
+        cf.setVisible(true);
+        cf.setLocationRelativeTo(null);
+    }//GEN-LAST:event_btnAterarActionPerformed
+
+    private void tdfLastCalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tdfLastCalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tdfLastCalActionPerformed
 
     /**
      * @param args the command line arguments
@@ -302,10 +442,15 @@ public class MainFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAterar;
     private javax.swing.JButton btnSair;
     private javax.swing.JButton btnSalvar;
+    private javax.swing.JButton btnSalvarAlt;
     private javax.swing.JButton btnVerTodos;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
