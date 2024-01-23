@@ -11,10 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import viewer.MainFrame;
 
-/**
- *
- * @author jasom
- */
+
 public class Program {
 
     public static void main(String[] args) {
