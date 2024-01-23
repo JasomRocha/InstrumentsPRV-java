@@ -156,10 +156,10 @@ public class ChangesFrame extends javax.swing.JFrame {
         });
 
         jLabel9.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel9.setText("Remover instrumento (Alteração não definitiva)");
+        jLabel9.setText("Alteração não definitiva");
 
         jLabel10.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel10.setText("Editar instrumento (Alteração não definitiva)");
+        jLabel10.setText("Alteração não definitiva");
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
         jLabel11.setText("Edite ou Remova instrumentos ");
@@ -169,7 +169,7 @@ public class ChangesFrame extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(27, 27, 27)
+                .addContainerGap(27, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -181,7 +181,6 @@ public class ChangesFrame extends javax.swing.JFrame {
                             .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addGap(24, 24, 24)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 343, Short.MAX_VALUE)
                                 .addComponent(tdfNextCal, javax.swing.GroupLayout.Alignment.LEADING)
@@ -189,28 +188,32 @@ public class ChangesFrame extends javax.swing.JFrame {
                                 .addComponent(tdfModel, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(tdfMaker, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(tdfName, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(btnRemover)
-                                .addComponent(jLabel9)
-                                .addComponent(btnSalvar))
-                            .addComponent(btnVoltar)))
+                                .addComponent(btnSalvar)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(10, 10, 10)
+                                        .addComponent(jLabel9))
+                                    .addComponent(btnRemover)))
+                            .addComponent(btnVoltar)
+                            .addComponent(jLabel10)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(32, 32, 32)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel11)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel8)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(tdfBuscaNaLista, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(btnBuscar))
-                            .addComponent(jLabel11))))
-                .addContainerGap(35, Short.MAX_VALUE))
+                                .addComponent(btnBuscar)))))
+                .addGap(35, 35, 35))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(35, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(35, 35, 35)
                 .addComponent(jLabel11)
-                .addGap(18, 18, 18)
+                .addGap(18, 18, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tdfBuscaNaLista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnBuscar)
@@ -244,9 +247,9 @@ public class ChangesFrame extends javax.swing.JFrame {
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnRemover)
-                .addGap(13, 13, 13)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel9)
-                .addGap(15, 15, 15)
+                .addGap(21, 21, 21)
                 .addComponent(btnSalvar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel10)
